@@ -1,11 +1,17 @@
 import React, {useState} from "react";
-import ChangeOnOtherBlock from "./components/ChangeBlock";
+import Login from "./Login";
+import Main from "./Main";
 
-function App() {
+function App(props) {
+  let [show,setShow] = useState(true)
   let [form,setForm] = useState({
     username: 'Danila',
     password: '12345',
   })
+
+  // function handlerClick() {
+  //   setShow(!show)
+  // }
 
   function handleChange (e) {
     const {name} = e.target
@@ -28,27 +34,16 @@ function App() {
 
   function trueLogin (e) {
     if(form.username === document.getElementById('inp1').value && form.password === document.getElementById('inp2').value ) {
-      render()
+      alert('good')
     }else {
       alert('Incorrect')
     }
   }
 
-  function render() {
-    return(
-      <ChangeOnOtherBlock/>
-    )
-  }
-
   return (
     <div className="App">
-      <form onSubmit={trueFalse}>
-        <div className="login-block">
-          <input className="Input1" type='text' id="inp1" name='Username' placeholder='Username' onChange={handleChange}/>
-          <input className="Input2" type='text' id="inp2" name='Password' placeholder='Password' onChange={handleChange}/>
-          <button className="button-login">LOGIN</button>
-        </div>
-      </form>
+      {Login}
+      {!Main}
     </div>
   );
 }
