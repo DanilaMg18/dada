@@ -9,9 +9,9 @@ function App(props) {
     password: '12345',
   })
 
-  // function handlerClick() {
-  //   setShow(!show)
-  // }
+  function handlerClick() {
+    setShow(!show)
+  }
 
   function handleChange (e) {
     const {name} = e.target
@@ -34,7 +34,7 @@ function App(props) {
 
   function trueLogin (e) {
     if(form.username === document.getElementById('inp1').value && form.password === document.getElementById('inp2').value ) {
-      alert('good')
+      handlerClick()
     }else {
       alert('Incorrect')
     }
@@ -42,8 +42,8 @@ function App(props) {
 
   return (
     <div className="App">
-      {Login}
-      {!Main}
+      {show && <Login trueFalse={trueFalse} trueLogin={trueLogin} />}
+      {!show && <Main/>}
     </div>
   );
 }
