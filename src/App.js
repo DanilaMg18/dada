@@ -42,7 +42,7 @@ function App(props) {
 
   return (
     <div className="App">
-      {show && <Login trueFalse={trueFalse} trueLogin={trueLogin} />}
+      {show && <Login trueFalse={trueFalse} trueLogin={trueLogin} handle={handleChange} />}
       {!show && <Main/>}
     </div>
   );
