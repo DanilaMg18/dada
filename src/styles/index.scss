@@ -1,6 +1,5 @@
 body {
-  background-color: rgb(190, 190, 190);
-  position: absolute;
+  background: gold
 }
 
 .button-login {
@@ -11,9 +10,83 @@ body {
   display: flex;
   border: 10px solid beige;
   flex-direction: column;
-  margin-left: 500px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
 }
 
 h1 {
   font-size: large;
+}
+
+form {
+  width: 100%;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  border: 4px solid black;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #da00ff;
+}
+
+.buttons {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.btn1, .btn2 {
+  width: 150px;
+  height: 50px;
+  background-color: beige;
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+
+.CreateBlock {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.Inp_createBlock1, .Inp_createBlock2, .Inp_createBlock3, .Inp_createBlock4, .Inp_createBlock5, .Inp_createBlock6{
+  width: 200px;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.create_btn {
+  width: 210px;
+  margin-top: 10px;
+  color: white;
+  font-size: large;
+  border-radius: 5px;
+  background-image: url(https://i.baraholka.com.ru/files/1/2/1298224.jpg);
+  cursor: pointer
+}
+
+.listBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  border: 2px solid black;
+  background-color: burlywood;
+}
+
+.listButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.listBtn1, .listBtn2 {
+  margin-top: 10px;
+  width: 50px;
 }

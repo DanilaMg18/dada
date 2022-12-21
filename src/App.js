@@ -2,49 +2,48 @@ import React, {useState} from "react";
 import Login from "./Login";
 import Main from "./Main";
 
+
 function App(props) {
-  let [show,setShow] = useState(true)
-  let [form,setForm] = useState({
+  let user = {
     username: 'Danila',
     password: '12345',
+  }
+  let [show,setShow] = useState(true)
+  let [form,setForm] = useState({
+    username: '',
+    password: '',
   })
+
+  function setUserName(username){
+    setForm({...form,username})
+  }
+
+  function setPassword(password){
+    setForm({...form,password})
+  }
 
   function handlerClick() {
     setShow(!show)
   }
 
-  function handleChange (e) {
-    const {name} = e.target
-    setForm (prev => {
-      return{
-        ...prev,
-        [name] : e.target.value
-      }
-    })
-  }
-
   function trueFalse(e) {
     e.preventDefault()
-    if(form.username !== '' && form.password !== '') {
-      trueLogin()
-    }else {
-      alert('Zapolnite')
-    }
-  }
-
-  function trueLogin (e) {
-    if(form.username === document.getElementById('inp1').value && form.password === document.getElementById('inp2').value ) {
-      handlerClick()
-    }else {
-      alert('Incorrect')
+    if (form.username === '' || form.password === '') {
+      alert('Please Fill All The Fields')
+    } else {
+      if (form.password === user.password && form.username === user.username) {
+        handlerClick()
+      }else {
+        alert ("Wrong Password")
+      }
     }
   }
 
   return (
     <div className="App">
-      {show && <Login trueFalse={trueFalse} trueLogin={trueLogin} handle={handleChange} />}
+      {show && <Login formDetails={form} changeFormDetails={setUserName} changeFormPassword={setPassword} trueFalse={trueFalse} />}
       {!show && <Main/>}
-    </div>
+    </div>  
   );
 }
 

@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Login(props) {
     return(
-        <form onSubmit={props.trueFalse}>
+        <form>
             <div className="login-block">
-                <input className="Input1" type='text' id="inp1" name='Username' placeholder='Username' onChange={props.handle}/>
-                <input className="Input2" type='text' id="inp2" name='Password' placeholder='Password' onChange={props.handle}/>
-                <button className="button-login" onClick={props.changeBlock}>LOGIN</button>
+                <input className="Input1" type='text' value={props.formDetails.username}  name='Username' placeholder='Username' onChange={(e) => {props.changeFormDetails(e.target.value)}}/>
+                <input className="Input2" type='text' value={props.formDetails.password} name='Password' placeholder='Password' onChange={(e) => {props.changeFormPassword(e.target.value)}}/>
+                <button className="button-login" onClick={props.trueFalse}>LOGIN</button>
             </div>
       </form>
     )
